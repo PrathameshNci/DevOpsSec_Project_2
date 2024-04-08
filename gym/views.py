@@ -62,14 +62,16 @@ def join_plan(request):
     if request.user.is_authenticated:
         if request.method=='POST':
             id=request.POST.get('id')
-            b=Booking.objects.get(user_id=request.user.pk)
-            if b is None:
+            try:
+                b=Booking.objects.get(user_id=request.user.pk)
+                return redirect('my_plan') 
+            except:
                 p=Plan.objects.get(pk=id)
                 # b=Booking.objects.filter(user_id=request.user.pk)
                 # print(b)
                 return render(request, 'join_plan.html', {'p':p}) 
-            else:
-                return redirect('my_plan')           
+           
+                          
         else:
 
             return HttpResponse("404 error")
