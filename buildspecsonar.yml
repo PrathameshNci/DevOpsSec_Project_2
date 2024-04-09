@@ -18,7 +18,7 @@ phases:
   build:
     commands:
       - set -e
-      - sonar-scanner -X -Dsonar.login=c8a21323ebad51d4b24d0ffaa9b46c67521ded02 -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=Piyush_final_devops_project -Dsonar.organization=piyush15081999 -DgeneratePom=true
+      - sonar-scanner -X -Dsonar.login=6ae0b7e6239474f6b53fe16434fbee6d5a07a0e9 -Dsonar.host.url=https://sonarcloud.io -Dsonar.projectKey=DevOpsSec_Project_2 -Dsonar.organization=prathameshnci -DgeneratePom=true
       - sleep 5
       - curl https://sonarcloud.io/api/qualitygates/project_status?projectKey=hotel >result.json
       - cat result.json
